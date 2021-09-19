@@ -39,7 +39,7 @@ form.onsubmit = (event) => {
       // если имя уникально
 
       // откроем веб-сокет соединение
-      const ws = new WebSocket(`wss://${baseUrl}/ws`);
+      const ws = new WebSocket(`wss://${baseUrl}`);
 
       // добавим обработчики чата
       chatInput.addEventListener('keyup', (chatInputEvent) => {
