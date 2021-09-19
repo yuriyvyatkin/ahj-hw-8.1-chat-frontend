@@ -13,8 +13,9 @@ const loading = document.querySelector('.status-loading');
 
 const errorHandler = new ErrorHandler(input);
 
-const baseUrl = 'https://simple-chat-2021.herokuapp.com';
-const api = new API(baseUrl, modal, input, loading);
+const baseUrl = 'simple-chat-2021.herokuapp.com';
+
+const api = new API(`https://${baseUrl}`, modal, input, loading);
 api.connection();
 
 form.onsubmit = (event) => {
@@ -38,7 +39,7 @@ form.onsubmit = (event) => {
       // если имя уникально
 
       // откроем веб-сокет соединение
-      const ws = new WebSocket('ws://localhost:7070/ws');
+      const ws = new WebSocket(`ws://${baseUrl}/ws`);
 
       // добавим обработчики чата
       chatInput.addEventListener('keyup', (chatInputEvent) => {
@@ -102,8 +103,10 @@ form.onsubmit = (event) => {
       // спрячем модальное окно
       modal.classList.remove('active');
 
-      // покажем список пользователей
-      usersContainer.classList.add('active');
+      setInterval(() => {
+        // покажем список пользователей
+        usersContainer.classList.add('active');
+      }, 1000);
 
       // покажем чат
       chat.classList.add('active');
