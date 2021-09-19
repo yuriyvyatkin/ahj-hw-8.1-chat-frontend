@@ -199,10 +199,11 @@ body {
 }
 
 .modal-form__input {
-  width: 100%;
+  width: 70%;
   padding: 5px;
 
   font: inherit;
+  text-align: center;
 }
 
 .modal-form__button-continue {
