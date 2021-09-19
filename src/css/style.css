@@ -25,10 +25,13 @@ body {
 
 .chat-widget {
   position: fixed;
-  right: 15px;
-  bottom: 15px;
+  top: 50%;
+  left: 50%;
 
   display: none;
+  align-items: center;
+
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .chat-widget__area {
@@ -99,6 +102,7 @@ body {
 
 .users-list-container {
   display: none;
+  height: 150px;
   padding: 10px;
 
   background-color: #ffffff;
@@ -111,7 +115,7 @@ body {
 }
 
 .users-list {
-  max-height: 300px;
+  max-height: 150px;
   padding: 0 10px 0 0;
   margin: 0;
   overflow-y: auto;
